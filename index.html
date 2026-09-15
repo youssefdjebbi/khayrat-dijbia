@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="خيرات دجبية - منتجات تونسية تقليدية مجففة طازجة وأصلية">
+  <title>خيرات دجبية — منتجات تونسية مجففة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <h1 class="logo js-store-name">خيرات دجبية</h1>
+        <a id="headerWhatsapp" class="btn btn-header-wa" target="_blank" rel="noopener" aria-label="اتصل بنا عبر واتساب">
+          <svg class="icon-wa" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.37 3 3.96 8.4 3.96 15.06c0 2.22.6 4.29 1.65 6.08L4 29l8.06-1.57a12.07 12.07 0 0 0 3.98.68c6.67 0 12.08-5.4 12.08-12.06C28.12 8.4 22.71 3 16.04 3z"/></svg>
+          <span>اتصل بنا</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>منتجات تونسية تقليدية</h2>
+        <p class="hero-tagline">أصيلة • طازجة • طبيعية 100%</p>
+        <div class="hero-facts">
+          <div class="fact">
+            <span class="fact-icon">🚚</span>
+            <span id="heroFactDelivery">التوصيل متوفر إلى كامل تراب الجمهورية</span>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">💳</span>
+            <span id="heroFactPayment">الدفع عند التوصيل</span>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">⏰</span>
+            <span id="heroFactHours">من الاثنين إلى الجمعة، من 9 صباحًا إلى 17 مساءً</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section class="products-section">
+    <div class="container">
+      <div id="filterBar" class="filter-bar" role="tablist">
+        <button class="filter-chip is-active" data-filter="all" role="tab" aria-selected="true">الكل</button>
+        <button class="filter-chip" data-filter="deals" role="tab" aria-selected="false">عروض</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="productsGrid" class="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modalClose" class="modal-close" aria-label="إغلاق">×</button>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img id="modalImg" src="" alt="" width="500" height="500">
+        </div>
+        <div class="modal-details">
+          <h2 id="modalProductName"></h2>
+          <p id="modalCategory" class="modal-category"></p>
+          <div class="modal-pricing">
+            <span id="modalPrice" class="price-now"></span>
+            <span id="modalOldPrice" class="price-old"></span>
+            <span id="modalDiscount" class="price-discount"></span>
+          </div>
+          <div class="modal-quantity">
+            <button id="qtyMinus" class="qty-btn" aria-label="تقليل الكمية">−</button>
+            <div class="qty-display">
+              <span id="qtyValue">1</span>
+              <span>كغ</span>
+            </div>
+            <button id="qtyPlus" class="qty-btn" aria-label="زيادة الكمية">+</button>
+          </div>
+          <div class="modal-total">
+            <span class="total-label">المجموع:</span>
+            <span id="modalTotal" class="total-amount"></span>
+          </div>
+          <a id="modalOrderBtn" class="btn btn-whatsapp btn-large" target="_blank" rel="noopener">
+            <svg class="icon-wa" viewBox="0 0 32 32" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.37 3 3.96 8.4 3.96 15.06c0 2.22.6 4.29 1.65 6.08L4 29l8.06-1.57a12.07 12.07 0 0 0 3.98.68c6.67 0 12.08-5.4 12.08-12.06C28.12 8.4 22.71 3 16.04 3z"/></svg>
+            <span>اطلب عبر واتساب</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>التواصل</h3>
+          <div class="contact-info">
+            <div id="contactPhoneRow" class="info-row">
+              <span class="info-icon">📞</span>
+              <a id="contactPhone" href="tel:"></a>
+            </div>
+            <div id="contactEmailRow" class="info-row">
+              <span class="info-icon">✉️</span>
+              <a id="contactEmail" href=""></a>
+            </div>
+            <div id="contactAddressRow" class="info-row">
+              <span class="info-icon">📍</span>
+              <span id="contactAddress"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>معلومات التسليم</h3>
+          <p id="contactDelivery"></p>
+          <h3>طريقة الدفع</h3>
+          <p id="contactPayment"></p>
+          <h3>ساعات العمل</h3>
+          <p id="contactHours"></p>
+        </div>
+
+        <div class="footer-section" id="footerSocialRow">
+          <h3>تابعنا</h3>
+          <div class="social-links">
+            <a id="socialFacebook" target="_blank" rel="noopener" aria-label="فيسبوك">
+              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3 10h-2v6h-2v-6H9v-2h2V8.5c0-2.04.78-3.3 3.3-3.3h2.5V8h-1.6c-1.22 0-1.3.45-1.3 1.3V10h2l-.5 2z"/></svg>
+            </a>
+            <a id="socialInstagram" target="_blank" rel="noopener" aria-label="إنستجرام">
+              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.645.069-4.849.069-3.205 0-3.584-.012-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 11-2.881.001 1.44 1.44 0 012.881-.001z"/></svg>
+            </a>
+            <a id="socialTiktok" target="_blank" rel="noopener" aria-label="تيك توك">
+              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.68v13.67a2.75 2.75 0 11-5.5 0 2.75 2.75 0 012.75-2.75c.37 0 .74.05 1.1.14V9.58a6.5 6.5 0 00-1.1-.1C6.59 9.48 2 13.84 2 19.13s4.59 9.65 10.23 9.65c5.65 0 10.23-4.32 10.23-9.65V12.4c2.1 1.53 4.76 2.42 7.59 2.42v-3.68c-1.74 0-3.37-.59-4.73-1.63v6.37c0 5.33-4.59 9.65-10.23 9.65C6.59 28.78 2 24.46 2 19.13s4.59-9.65 10.23-9.65z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="footerYear"></span> <span class="js-store-name">خيرات دجبية</span> — جميع الحقوق محفوظة</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky WhatsApp Button -->
+  <a id="stickyWhatsapp" class="sticky-wa" target="_blank" rel="noopener" aria-label="اتصل بنا عبر واتساب">
+    <svg class="icon-wa" viewBox="0 0 32 32" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.37 3 3.96 8.4 3.96 15.06c0 2.22.6 4.29 1.65 6.08L4 29l8.06-1.57a12.07 12.07 0 0 0 3.98.68c6.67 0 12.08-5.4 12.08-12.06C28.12 8.4 22.71 3 16.04 3z"/></svg>
+  </a>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
